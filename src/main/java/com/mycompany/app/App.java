@@ -5,7 +5,7 @@ package com.mycompany.app;
  */
 public class App
 {
-
+    static final ArrayList list = new ArrayList(100);
     private final String message = "Hello World!";
 
     public App() {}
