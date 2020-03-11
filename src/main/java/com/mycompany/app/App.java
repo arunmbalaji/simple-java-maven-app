@@ -1,5 +1,7 @@
 package com.mycompany.app;
-
+import java.net.*;
+import java.io.*;
+import java.util.*;
 /**
  * Hello world!
  */
@@ -16,6 +18,19 @@ public class App
         for(long ;i<1000;i++)
         {
             ap.addIncremental(i);
+        }
+        
+        try {
+            String str = "";
+            URLConnection conn = new URL("http://aws.amazon.com").openConnection();
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
+    
+            while (br.readLine() != null) {
+                str += br.readLine();
+            } 
+
+        } catch (Exception e) {
+            e.printStacktrace();
         }
     }
 
